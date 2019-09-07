@@ -88,7 +88,7 @@
   width: 650px;
   height: 500px;
   background-color: #8dbf75;
-  border-radius: 15px;
+  border-radius: 15;
 }
 .page {
   width: 900px;
@@ -132,6 +132,7 @@ to change the color of the whole background ***/
   height: 160px;
   background-color: #B2D6FF;
   border-radius: 15px;    /* Medium blue */
+
 }
 /*** adding another overflow to tell the footer to ignore the flow ***/
 .footer {
@@ -140,6 +141,11 @@ to change the color of the whole background ***/
 }
 .footer-item{
   overflow: hidden;
+  max-width: 600px;
+  min-width: 100px;
+  max-height: 160px;
+  height: auto;
+
 }
 
 .content{
@@ -160,5 +166,17 @@ p {
 .searchForm{
   margin-bottom:25px;
   border-radius: 15px;
+
+}
+.foot-item-image:hover{
+  width:100%;
+  opacity:0.9;
+  max-height: 160px;
+  height: auto;
+  
+
+}
+.bigDiv{
+  clear:
 
 }

@@ -137,7 +137,8 @@ to change the color of the whole background ***/
 /*** adding another overflow to tell the footer to ignore the flow ***/
 .footer {
   overflow: hidden;
-  background-color: #D6E9FE;
+  background-color: rgb(227, 255, 234);
+
 }
 .footer-item{
   overflow: hidden;
@@ -169,14 +170,8 @@ p {
 
 }
 .foot-item-image:hover{
-  width:100%;
+  width:300%;
   opacity:0.9;
   max-height: 160px;
   height: auto;
-  
-
-}
-.bigDiv{
-  clear:
-
 }

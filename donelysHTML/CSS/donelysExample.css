@@ -8,9 +8,9 @@
 #unorderedListID{
   background-color: #4381e6;
   color:black;
-  text-shadow:
-
+  
 }
+
 #bigForm{
   width: 500px;
   border: 1px solid black;
@@ -175,3 +175,7 @@ p {
   max-height: 160px;
   height: auto;
 }
+.selectorsIMG{
+  clear: both;
+}
+

@@ -1,4 +1,9 @@
 
+
+
+ 
+  
+    
 /*** this is a function that returns the actual date */
 
 function getDate(){
@@ -18,56 +23,54 @@ function getNewColor(newColor){
 This function will remove the rows and will set the isShowing Boolean to false;
 */
 
-function removeRow(input,secondInput) {
-    var firstElement = document.getElementById(input);
-    var secondElement = document.getElementById(secondInput);
-    firstElement.parentElement.removeChild(firstElement);
-    secondElement.parentElement.removeChild(secondElement); 
-    isShowing = false;
+function removeRow() {
+   document.getElementById('InBigDivision').style.display="none";
+    
     console.log(document.getElementById('InBigDivision').childNodes.length);
   }
   
 
 
 
-var isShowing = false;
+
 /*
 This function will check is there is nothing showing and if nothing showing  it display content
 */
- function addContent(){
-  if(isShowing == false){
-  const div = document.createElement('sidebarDIV');
-  div.id = 'sidebarID';
-  div.className = 'sidebar';
-  const div2 = document.createElement('contentDIV');
-  div2.id = 'contentID';
-  div2.className = 'content';
-
-  div.innerHTML = `
-  <img src="imgs/chamomile.jpg" style="width:100%; opacity:0.9; height:250px">
-  <!--- ading the chosen target to sidebar  -->
-  </div>
-`;
-  div2.innerHTML = `
-    <h2 class="headContent">Chamomile</h2>
-    <p>(Flower)</p>
-
-    <p>Considered by some to be a cure-all, chamomile is commonly used in the U.S.
-      as ananxiolytic and sedative for anxiety and relaxation.
-      It is used in Europe for wound healing and to reduce inflammation or swelling.
-      Few studies have looked at how well it works for any condition. Chamomile is used as a tea or applied as a compress. It is considered safe by the FDA. It may increase drowsiness caused by medicines or other herbs or supplements. Chamomile may interfere with the way the body uses some medicines, causing too high a level of the medicine in some people. As with any medicinal herb, talk with your healthcare provider before taking it.</p>
+ function addContent(id){
+  
+    document.getElementById('InBigDivision').style.display="block";
+   
+/**** This method will call the data from JSON file */
+    $.getJSON('JS/plantsData.json',data  =>{
+      $(document).ready(function(){
+      
+      let info = document.getElementById('contentInfoID');
+      let name = document.getElementById('headContent');
+      let type = document.getElementById('contentTypeID');
+      let i = 0
     
-      <input type="button" value="-" onclick="removeRow('sidebarID','contentID')" />
-      `
-    ;
-  document.getElementById('InBigDivision').appendChild(div);
-  document.getElementById('InBigDivision').appendChild(div2);
-  isShowing = true;
-  }
-  else{
-    removeRow('sidebarID','contentID');
-    isShowing = false;
-    addContent();
-  }
+    while(i<data.plants.length){
+      if(id == i){
+      console.log(data.plants[i].name + "id number:" + id);
+      info.innerHTML = data.plants[i].information + `<input type="button" value="Hide" name='Hide' onclick="removeRow()" />`;
+      name.innerHTML = data.plants[i].name;
+      type.innerHTML = data.plants[i].type;
+      document.getElementById('imgID').setAttribute("src",data.plants[i].image);
+      
+      }
+      
+      i++;
+      
+    }
+      
+      }); 
+  
+    });
+
+
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // for google chrome
+
 
 }
+

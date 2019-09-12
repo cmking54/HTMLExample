@@ -8,9 +8,9 @@
 #unorderedListID{
   background-color: #4381e6;
   color:black;
-  text-shadow:
-
+  
 }
+
 #bigForm{
   width: 500px;
   border: 1px solid black;
@@ -132,14 +132,22 @@ to change the color of the whole background ***/
   height: 160px;
   background-color: #B2D6FF;
   border-radius: 15px;    /* Medium blue */
+
 }
 /*** adding another overflow to tell the footer to ignore the flow ***/
 .footer {
   overflow: hidden;
-  background-color: #D6E9FE;
+  background-color: rgb(227, 255, 234);
+
 }
 .footer-item{
   overflow: hidden;
+  max-width: 600px;
+  min-width: 100px;
+  max-height: 160px;
+  height: auto;
+  
+
 }
 
 .content{
@@ -150,6 +158,13 @@ to change the color of the whole background ***/
 p {
   margin-bottom: 20px;
   border-radius: 15px;
+  font-family: 'Times New Roman';
+  font-size: 130%;
+}
+#contentTypeID{
+  font-family: verdana;
+  font-size: 90%;
+
 }
 
 .menu {
@@ -162,3 +177,48 @@ p {
   border-radius: 15px;
 
 }
+.foot-item-image:hover{
+  width:300%;
+  opacity:0.9;
+  max-height: 160px;
+  height: auto;
+}
+.selectorsIMG{
+  clear: both;
+}
+/****************Button***************/
+/* Container needed to position the button. Adjust the width as needed */
+.footer-item {
+  position:relative;
+  width: 30%;
+}
+
+/* Make the image responsive */
+.footer-item img {
+  width: 20%;
+  height: auto;
+  position: relative; 
+}
+
+/* Style the button and place it in the middle of the container/image */
+.footer-item .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width:100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  font-size: 16px;
+  padding: 12px 24px;
+  background-color: #4381e6;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  opacity: .1;
+}
+.footer-item:hover{
+  opacity: .6;
+}
+
+

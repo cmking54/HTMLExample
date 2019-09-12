@@ -3,13 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-  </head>
-  <link rel="stylesheet" href="CSS/donelysExample.css">
 
+    <title>medicinal herbs</title>
+    
+    <link rel="stylesheet" href="CSS/donelysExample.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+   
+  </head>
   <body>
-    <script src="JS/donelysExample.js" type="text/javascript">
-    </script>
+      
 
     <div class='menu'>
       <h1>Medicinal herbs</h1> <!--- inside the menu we are going to add the search bar -->
@@ -19,38 +21,80 @@
       </form>
     </div>
     <div class='container'>
-      <div class="page" id="InBigDivision">
 
-        <div class='sidebar'>
-        <img src="imgs/chamomile.jpg" style="width:100%; opacity:0.9; height:250px">
-        <!----- ading the chosen target to sidebar  -->
-      </div>
+      <div class="page" id="InBigDivision" style="display: none">
+          <div class='sidebar' id= 'sidebarID'>
+              <img id='imgID' src="imgs/chamomile.jpg" style="width:100%; opacity:0.9; height:250px">
 
-        <div class='content'>
-          <p><h2 class="headContent">Chamomile</h2></p>
-          <p>(Flower)</p>
-          
-          <p>Considered by some to be a cure-all, chamomile is commonly used in the U.S.
-            as ananxiolytic and sedative for anxiety and relaxation.
-            It is used in Europe for wound healing and to reduce inflammation or swelling.
-            Few studies have looked at how well it works for any condition. Chamomile is used as a tea or applied as a compress. It is considered safe by the FDA. It may increase drowsiness caused by medicines or other herbs or supplements. Chamomile may interfere with the way the body uses some medicines, causing too high a level of the medicine in some people. As with any medicinal herb, talk with your healthcare provider before taking it.</p>
-
-        </div> <!--opeging content -->
-
-
-
+          </div>
+        <div class='content' id= 'contentID'>
+          <h2 class='headContent' id='headContent'></h2>
+          <p id= 'contentTypeID'></p>
+          <p id='contentInfoID'></p>
+        </div>
+        
+        
     </div> <!--- ending content division-->
-    <div class='footer-item'><img src="imgs/chamomile.jpg" style="width:100%; opacity:0.9"> </div>
-    <div class='footer-item'><img src="imgs/Echinacea.jpeg" style="width:100%; opacity:0.9"></div>
-    <div class='footer-item'><img src="imgs/Feverfew.jpg" style="width:100%; opacity:0.9"></div>
-    <div class='footer-item'><img src="imgs/garlic.jpg" style="width:100%; opacity:0.9"></div>
-    <div class='footer-item'><img src="imgs/ginger.jpg" style="width:100%; opacity:0.9"></div> <!-- adding more colums to footer -->
-    <div class='footer-item'><img src="imgs/ginkgo.jpg" style="width:100%; opacity:0.9"></div>
-    <div class='footer-item'><img src="imgs/Ginseng.jpg" style="width:100%; opacity:0.9"></div>
-    <div class='footer-item'><img src="imgs/Milkthistle.jpg" style="width:100%; opacity:0.9"></div>
-    <div class='footer-item'><img src="imgs/SaintJohnswort.jpg" style="width:100%; opacity:0.9"></div>
-    <!-- https://www.urmc.rochester.edu/encyclopedia/content.aspx?contenttypeid=1&contentid=1169 -->
+
+    
+    <div class="selectorsIMG">
+    <div class='footer-item'>
+      <img src="imgs/chamomile.jpg" style="width:100%; opacity:0.9"> 
+      <button id ='0' class= "btn" name="Chemomile" onclick="addContent(this.id)"></button> 
+    </div>
+    <!--- ending content division-->
+
+
+    <div class='footer-item'>
+      <img src="imgs/Echinacea.jpeg"  style="width:100%; opacity:0.9">
+      <button id ='1'class= "btn" onclick="addContent(this.id)"></button> 
+    </div>
+    <!--- ending content division-->
+
+    <div class='footer-item'>
+      <img src="imgs/Feverfew.jpg" style="width:100%; opacity:0.9">
+      <button id='2'class= "btn" onclick="addContent(this.id)"></button> 
+    </div>
+    <!--- ending content division-->
+
+    <div class='footer-item'>
+      <img src="imgs/garlic.jpg" style="width:100%; opacity:0.9">
+      <button id ='3'class= "btn" onclick="addContent(this.id)"></button> 
+    </div>
+    <!--- ending content division-->
+
+    <div class='footer-item'>
+      <img src="imgs/ginger.jpg" style="width:100%; opacity:0.9">
+      <button id='4' class= "btn" onclick="addContent(this.id)"></button> 
+    </div>
+    <!-- adding more colums to footer -->
+    <div class='footer-item'>
+      <img src="imgs/ginkgo.jpg" style="width:100%; opacity:0.9">
+      <button id='5'class= "btn" onclick="addContent(this.id)"></button> 
+    </div>
+    <!--- ending content division-->
+
+    <div class='footer-item'>
+      <img src="imgs/Ginseng.jpg" style="width:100%; opacity:0.9">
+      <button id = '6' class= "btn" onclick="addContent(this.id)"></button> 
+    </div>
+    <!--- ending content division-->
+
+    <div class='footer-item'>
+      <img src="imgs/Milkthistle.jpg" style="width:100%; opacity:0.9">
+      <button id= '7' class= "btn" onclick="addContent(this.id )"></button> 
+    </div>
+    <!--- ending content division-->
+
+    <div class='footer-item'>
+      <img src="imgs/SaintJohnswort.jpg" style="width:100%; opacity:0.9">
+      <button id='8' class= "btn" onclick="addContent(this.id)"></button> 
+    </div>
+    <!--- ending content division-->
+
+    <!-- https://www.urmc.rochester.edu/encyclopedia/content.aspx?contenttypeid=1&contentid=1169    information for herbs and plants-->
       </div>
+  </div>
 
 
 
@@ -58,6 +102,8 @@
 
 
     </div>
-
+    <script src="JS/donelysExample.js" type="text/javascript"></script> 
+    
+    
   </body>
 </html>
